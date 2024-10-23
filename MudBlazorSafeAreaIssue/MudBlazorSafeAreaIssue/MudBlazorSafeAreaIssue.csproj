@@ -10,6 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\MudBlazorSafeAreaIssue.Client\MudBlazorSafeAreaIssue.Client.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.*" />
+    <ServiceWorker Include="wwwroot\service-worker.js" />
   </ItemGroup>
 
 </Project>
