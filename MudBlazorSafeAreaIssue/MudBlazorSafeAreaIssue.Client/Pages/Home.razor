@@ -1,0 +1,60 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<MudText>
+    Safe area will exist in iPhone PWA.
+</MudText>
+
+<MudText>
+    NavMenu will have gap between AppBar when safe area exists.
+</MudText>
+
+<MudButton OnClick="() => drawerOpened = true">
+    Open drawer
+</MudButton>
+
+<MudDrawer @bind-Open="drawerOpened" Variant="DrawerVariant.Temporary" Anchor="Anchor.Bottom" Height="100dvh" Class="px-4 pb-4" Style="padding-top: calc(16px + env(safe-area-inset-top));">
+    <MudDrawerHeader>
+        <MudIconButton OnClick="() => drawerOpened = false" Icon="@Icons.Material.Filled.Close" />
+        <MudText>
+            Drawer Header content
+        </MudText>
+    </MudDrawerHeader>
+    <MudText>
+        Using
+        <br />
+        <code>
+            Style="
+
+            <br />
+            padding-top: calc(16px + env(safe-area-inset-top));
+
+            <br />
+            padding-right: calc(16px + env(safe-area-inset-right));
+
+            <br />
+            padding-left: calc(16px + env(safe-area-inset-left));
+
+            <br />
+            padding-bottom: calc(16px + env(safe-area-inset-bottom));"
+        </code>
+
+        <br />
+        instead of
+
+        <br />
+        <code>
+            Class="pa-4"
+        </code>
+
+        <br />
+        is required to rendered correctly when safe area exists.
+    </MudText>
+</MudDrawer>
+
+
+
+@code{
+    bool drawerOpened;
+}
